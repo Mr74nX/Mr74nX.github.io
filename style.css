@@ -509,6 +509,16 @@ body {
   animation-duration: 14s;
   animation-direction: reverse;
 }
+/* Avatar Image Styling */
+.avatar__image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
 
 @keyframes spinRing {
   to { transform: rotate(360deg); }
