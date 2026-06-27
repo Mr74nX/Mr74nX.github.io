@@ -34,6 +34,8 @@
     "featured": false,
     "desc": "A menu-driven Nmap wrapper with 14 professionally-curated scan profiles, ANSI color output, timing selection, authorization confirmation, and result export. Designed for security researchers and CTF participants.",
     "tags": ["Python", "Nmap", "CLI", "ANSI"],
+    "support":"Only for Linux",
+    "installation":"pipx install nmaping",
     "github": "https://github.com/mrtan-official",
     "live": "",
     "folder": "projects/nmapeasy-cli"
