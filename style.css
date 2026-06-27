@@ -1,5 +1,5 @@
 /* =============================================
-   MR. TAN — SHARED STYLESHEET v3.0
+   MR. TAN — SHARED STYLESHEET v3.1 (IMPROVED CONTRAST)
    ============================================= */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,9 +17,9 @@
   --cyber-dim:    rgba(56,189,248,0.7);
 
   --text-primary:   #f0f0f0;
-  --text-secondary: #787878;
-  --text-tertiary:  #404044;
-  --text-muted:     #282830;
+  --text-secondary: #a0a0a0;
+  --text-tertiary:  #707074;
+  --text-muted:     #505058;
 
   --border:        rgba(255,255,255,0.055);
   --border-accent: rgba(0,230,57,0.18);
@@ -251,7 +251,7 @@ body {
 .footer__social:hover { color:var(--neon); opacity:1; }
 .social-icon { width:15px; height:15px; flex-shrink:0; }
 .footer__bottom {
-  color: #ffffff; /* অথবা #888888 হালকা ধূসরের জন্য */
+  color: #ffffff;
   padding: 20px 0;
   text-align: center; 
   display:flex; justify-content:space-between; align-items:center;
