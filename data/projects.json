@@ -1,0 +1,67 @@
+[
+  {
+    "id": "shizuka-ai",
+    "number": "01",
+    "title": "Shizuka AI",
+    "status": "active",
+    "statusLabel": "Active",
+    "featured": true,
+    "desc": "An AI-powered conversational security assistant providing real-time threat intelligence, CTF guidance, and automated OSINT lookups. Built with Python and LLM APIs, Shizuka bridges the gap between raw data and actionable security insights.",
+    "tags": ["Python", "LLM API", "NLP", "OSINT"],
+    "github": "https://github.com/mrtan-official",
+    "live": "",
+    "folder": "projects/shizuka-ai"
+  },
+  {
+    "id": "zero-trust-framework",
+    "number": "02",
+    "title": "Zero Trust Security Framework",
+    "status": "active",
+    "statusLabel": "Active",
+    "featured": false,
+    "desc": "A modular implementation of Zero Trust Architecture principles for SMB environments. Features identity verification layers, micro-segmentation policies, and a continuous monitoring dashboard.",
+    "tags": ["Python", "ZTNA", "IAM", "mTLS"],
+    "github": "https://github.com/mrtan-official",
+    "live": "",
+    "folder": "projects/zero-trust-framework"
+  },
+  {
+    "id": "nmapeasy-cli",
+    "number": "03",
+    "title": "NmapEasy CLI",
+    "status": "active",
+    "statusLabel": "Active",
+    "featured": false,
+    "desc": "A menu-driven Nmap wrapper with 14 professionally-curated scan profiles, ANSI color output, timing selection, authorization confirmation, and result export. Designed for security researchers and CTF participants.",
+    "tags": ["Python", "Nmap", "CLI", "ANSI"],
+    "github": "https://github.com/mrtan-official",
+    "live": "",
+    "folder": "projects/nmapeasy-cli"
+  },
+  {
+    "id": "ip-geo-tool",
+    "number": "04",
+    "title": "IP Geolocation Intel Tool",
+    "status": "indev",
+    "statusLabel": "In Dev",
+    "featured": false,
+    "desc": "A rich-styled terminal IP intelligence tool leveraging ip-api.com and ipwho.is for multi-source geolocation lookups. Features error resilience, a safe_get() helper, and beautifully formatted Rich output panels.",
+    "tags": ["Python", "Rich", "ip-api", "REST"],
+    "github": "https://github.com/mrtan-official",
+    "live": "",
+    "folder": "projects/ip-geo-tool"
+  },
+  {
+    "id": "forensics-toolkit",
+    "number": "05",
+    "title": "Digital Forensics Toolkit",
+    "status": "research",
+    "statusLabel": "Research",
+    "featured": false,
+    "desc": "A personal forensics toolkit for evidence collection, artifact analysis, and incident response automation. Built to assist in post-breach analysis and timeline reconstruction from system logs.",
+    "tags": ["Python", "Forensics", "IR", "Log Analysis"],
+    "github": "https://github.com/mrtan-official/forensics-tool",
+    "live": "",
+    "folder": "projects/forensics-toolkit"
+  }
+]
