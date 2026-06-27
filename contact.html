@@ -27,6 +27,28 @@
     .contact-item__label { font-family:var(--font-mono); font-size:.7rem; color:var(--neon); opacity:.6; letter-spacing:.12em; display:block; margin-bottom:3px; }
     .contact-item__val   { font-size:.88rem; color:var(--text-primary); font-weight:500; }
 
+    /* CV download button */
+    .cv-download-wrap { margin-bottom:var(--sp-6); }
+    .cv-btn {
+      display:inline-flex; align-items:center; gap:var(--sp-3);
+      font-family:var(--font-mono); font-size:.82rem; font-weight:600;
+      color:var(--bg-base); background:var(--neon);
+      border:1px solid var(--neon); padding:var(--sp-3) var(--sp-6);
+      border-radius:var(--radius-sm); text-decoration:none; letter-spacing:.06em;
+      transition:background var(--ease-fast), box-shadow var(--ease-fast), transform var(--ease-fast);
+      cursor:pointer;
+    }
+    .cv-btn:hover {
+      background:#00ff41; box-shadow:0 0 22px rgba(0,230,57,.35);
+      transform:translateY(-2px);
+    }
+    .cv-btn svg { width:16px; height:16px; flex-shrink:0; }
+    .cv-btn__sub {
+      display:block; font-size:.62rem; font-weight:400;
+      opacity:.7; letter-spacing:.08em; margin-top:2px;
+    }
+    .cv-btn__text { display:flex; flex-direction:column; }
+
     .availability-box {
       background:var(--bg-surface); border:1px solid rgba(0,230,57,.15);
       border-radius:var(--radius-md); padding:var(--sp-6) var(--sp-8);
@@ -79,6 +101,28 @@
         <div class="contact-grid">
           <!-- Links -->
           <div class="reveal">
+
+            <!-- CV Download -->
+            <div class="cv-download-wrap">
+              <a
+                href="https://mrtan-official.github.io/assets/files/mrtan-cv.pdf"
+                class="cv-btn"
+                download="MrTan-CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span class="cv-btn__text">
+                  Download CV
+                  <span class="cv-btn__sub">mrtan-cv.pdf · Abu Tanim</span>
+                </span>
+              </a>
+            </div>
+
             <a href="mailto:mrtanvai@gmail.com" class="contact-item">
               <span class="contact-item__icon">✉️</span>
               <div>
@@ -146,7 +190,7 @@
         <div class="footer__top">
           <div>
             <div class="footer__logo">Mr<span class="accent">.</span>Tan</div>
-            <p class="footer__tagline">// Securing systems. Automating intelligence. Breaking limits.</p>
+            <p class="footer__tagline"> Securing systems. Automating intelligence. Breaking limits.</p>
           </div>
         </div>
         <div class="footer__bottom">
