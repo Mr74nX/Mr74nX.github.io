@@ -251,6 +251,9 @@ body {
 .footer__social:hover { color:var(--neon); opacity:1; }
 .social-icon { width:15px; height:15px; flex-shrink:0; }
 .footer__bottom {
+  color: #ffffff; /* অথবা #888888 হালকা ধূসরের জন্য */
+  padding: 20px 0;
+  text-align: center; 
   display:flex; justify-content:space-between; align-items:center;
   flex-wrap:wrap; gap:var(--sp-4); padding-top:var(--sp-6); border-top:1px solid var(--border);
 }
