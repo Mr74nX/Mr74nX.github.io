@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Projects — Mr. Tan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .projects-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:var(--sp-5);
+    }
+
+    /* Add project hint box */
+    .add-hint {
+      margin-top:var(--sp-12); padding:var(--sp-6) var(--sp-8);
+      background:var(--bg-surface); border:1px dashed rgba(0,230,57,.2);
+      border-radius:var(--radius-md);
+    }
+    .add-hint__title {
+      font-family:var(--font-mono); font-size:.82rem; color:var(--neon);
+      margin-bottom:var(--sp-3); opacity:.8;
+    }
+    .add-hint__desc { font-size:.82rem; color:var(--text-secondary); line-height:1.75; }
+    .add-hint__code {
+      display:block; margin-top:var(--sp-4); font-family:var(--font-mono);
+      font-size:.76rem; color:var(--text-primary);
+      background:var(--bg-elevated); border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:var(--sp-4) var(--sp-5);
+      white-space:pre; overflow-x:auto; line-height:1.9;
+    }
+    .add-hint__code .k { color:var(--cyber); }
+    .add-hint__code .s { color:#a5d6a7; }
+    .add-hint__code .p { color:var(--text-tertiary); }
+
+    /* Loading state */
+    .loading-msg {
+      font-family:var(--font-mono); font-size:.85rem; color:var(--text-secondary);
+      padding:var(--sp-8) 0;
+    }
+    .loading-msg::after { content:'...'; animation:blink 1s step-end infinite; }
+  </style>
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-bracket">[</span><span class="nav__logo-text">Mr.Tan</span><span class="nav__logo-bracket">]</span><span class="nav__logo-cursor">_</span>
+    </a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="about.html"    class="nav__link"><span class="nav__link-prefix">~/</span>about</a></li>
+      <li><a href="skills.html"   class="nav__link"><span class="nav__link-prefix">~/</span>skills</a></li>
+      <li><a href="projects.html" class="nav__link active"><span class="nav__link-prefix">~/</span>projects</a></li>
+      <li><a href="contact.html"  class="nav__link nav__link--cta">contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+    <div class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <span class="page-hero__eyebrow">// 03</span>
+        <h1 class="page-hero__title">Projects<span class="accent">.</span></h1>
+        <p class="page-hero__sub">Security tools, research work, and automation pipelines — loaded from <code style="color:var(--neon);font-size:.85em;">data/projects.json</code></p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="projects-grid" id="projects-grid">
+          <p class="loading-msg">Loading projects</p>
+        </div>
+
+        <!-- How to add a project -->
+        <div class="add-hint reveal">
+          <p class="add-hint__title">// How to add a new project</p>
+          <p class="add-hint__desc">
+            Open <strong style="color:var(--text-primary);">data/projects.json</strong> and add a new object to the array. The site will automatically render it — no HTML editing needed.
+          </p>
+          <code class="add-hint__code"><span class="p">{</span>
+  <span class="k">"id"</span><span class="p">:</span>          <span class="s">"my-new-tool"</span><span class="p">,</span>
+  <span class="k">"number"</span><span class="p">:</span>      <span class="s">"06"</span><span class="p">,</span>
+  <span class="k">"title"</span><span class="p">:</span>       <span class="s">"My New Tool"</span><span class="p">,</span>
+  <span class="k">"status"</span><span class="p">:</span>      <span class="s">"active"</span>  <span class="p">// active | indev | research</span>
+  <span class="k">"statusLabel"</span><span class="p">:</span> <span class="s">"Active"</span><span class="p">,</span>
+  <span class="k">"featured"</span><span class="p">:</span>    <span class="s">false</span><span class="p">,</span>
+  <span class="k">"desc"</span><span class="p">:</span>        <span class="s">"What does it do?"</span><span class="p">,</span>
+  <span class="k">"tags"</span><span class="p">:</span>        <span class="p">[</span><span class="s">"Python"</span><span class="p">,</span> <span class="s">"CLI"</span><span class="p">],</span>
+  <span class="k">"github"</span><span class="p">:</span>      <span class="s">"https://github.com/mrtan-official/my-new-tool"</span><span class="p">,</span>
+  <span class="k">"live"</span><span class="p">:</span>        <span class="s">""</span>
+<span class="p">}</span></code>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div>
+            <div class="footer__logo">Mr<span class="accent">.</span>Tan</div>
+            <p class="footer__tagline">// Securing systems. Automating intelligence. Breaking limits.</p>
+          </div>
+          <div class="footer__links">
+            <a href="https://github.com/mrtan-official" class="footer__social" target="_blank">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+            <a href="mailto:mrtanvai@gmail.com" class="footer__social">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span class="footer__copy">&copy; 2026 Abu Tanim.</span>
+          <span class="footer__version">v3.0.0 // mrtan-official.github.io</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="nav.js"></script>
+  <script src="reveal.js"></script>
+  <script>
+    /* ── LOAD PROJECTS FROM JSON ── */
+    async function loadProjects() {
+      const grid = document.getElementById('projects-grid');
+
+      try {
+        const res = await fetch('data/projects.json');
+        if (!res.ok) throw new Error('Failed to load');
+        const projects = await res.json();
+
+        grid.innerHTML = ''; // clear loading msg
+
+        projects.forEach((p, i) => {
+          const statusClass =
+            p.status === 'active'   ? 'project-card__status--active'   :
+            p.status === 'indev'    ? 'project-card__status--indev'     :
+            p.status === 'research' ? 'project-card__status--research'  : '';
+
+          const tags = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+          const links = [
+            p.github ? `<a href="${p.github}" class="project-link" target="_blank" rel="noopener noreferrer">GitHub <span class="link-arrow">→</span></a>` : '',
+            p.live   ? `<a href="${p.live}"   class="project-link" target="_blank" rel="noopener noreferrer">Live Demo <span class="link-arrow">→</span></a>` : '',
+          ].filter(Boolean).join('');
+
+          const card = document.createElement('article');
+          card.className = `project-card${p.featured ? ' project-card--featured' : ''} reveal`;
+          card.innerHTML = `
+            <div class="project-card__header">
+              <span class="project-card__number">${p.number}</span>
+              <span class="project-card__status ${statusClass}">● ${p.statusLabel}</span>
+            </div>
+            <h2 class="project-card__title">${p.title}</h2>
+            <p class="project-card__desc">${p.desc}</p>
+            <div class="project-card__tech">${tags}</div>
+            <div class="project-card__links">${links || '<span style="color:var(--text-muted);font-family:var(--font-mono);font-size:.72rem;">// links coming soon</span>'}</div>
+          `;
+          grid.appendChild(card);
+        });
+
+        // Ghost "more coming" card
+        const ghost = document.createElement('article');
+        ghost.className = 'project-card project-card--ghost reveal';
+        ghost.innerHTML = `<div class="project-card__ghost-content"><span class="ghost-icon">+</span><p>More loading<span class="blink">...</span></p></div>`;
+        grid.appendChild(ghost);
+
+        // Trigger reveal for dynamically added cards
+        if (window.initReveal) window.initReveal();
+
+      } catch (err) {
+        grid.innerHTML = `<p style="font-family:var(--font-mono);font-size:.83rem;color:#f59e0b;">
+          ⚠ Could not load projects. Make sure <code>data/projects.json</code> exists.<br>
+          <span style="color:var(--text-secondary);font-size:.75rem;">${err.message}</span>
+        </p>`;
+      }
+    }
+
+    loadProjects();
+  </script>
+</body>
+</html>
