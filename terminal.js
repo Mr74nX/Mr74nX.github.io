@@ -12,7 +12,7 @@ const BOOT = [
   { t: 'Last login: ' + new Date().toDateString() + ' on ttys001',          d: 0   },
   { t: '',                                                                    d: 60  },
   { t: 'whoami',                                                             d: 300, cmd: true },
-  { t: 'mrtan',                                                              d: 40  },
+  { t: 'Mr. Tan',                                                              d: 40  },
   { t: '',                                                                    d: 30  },
   { t: 'cat .profile',                                                       d: 260, cmd: true },
   { t: '<span class="tc">NAME</span>      Abu Tanim (Mr. Tan)',              d: 40  },
